@@ -1,23 +1,29 @@
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-
+import Categories from './components/Categories';
+import Delievery from './components/Delievery';
+import Featured from './components/Featured';
+import Footer from './components/Footer';
+import Meal from "./components/Meal";
+import Nav from "./components/Nav"
+import NewsLetter from "./components/NewsLetter"
+import TopPicks from './components/TopPicks';
+import PageNotFound from './components/PageNotFound';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Nav />
+      <Featured />
+      <Delievery />
+      <TopPicks />
+      <Meal />
+      <Categories />
+      <NewsLetter/>
+      <Footer />
+      <Routes>
+          <Route path="*" element={<PageNotFound />} />
+
+      </Routes>
     </div>
   );
 }
